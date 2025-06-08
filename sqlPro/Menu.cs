@@ -40,9 +40,11 @@ public class Controller
                     _dal.UpdateAgentStatusById();
                     break;
                 case "5":
-                    List<Agent> agents = _dal.GetAllAgents();
-                    foreach (Agent agent in agents)
+                {
+                    List<Agent> agents2 = _dal.GetAllAgents();
+                    foreach (Agent agent in agents2)
                         agent.PrintInfo();
+                }
                     break;
                 case "6":
                     _dal.CloseConnection();

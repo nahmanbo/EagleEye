@@ -21,8 +21,8 @@ public class Agent
     }
     public Agent() { }
 
-    public string PrintInfo()
+    public void PrintInfo()
     {
-        return $"[{Id}] {CodeName} - {RealName} ({Location}) | Status: {Status}, Missions: {MissionsCompleted}";
+        Console.WriteLine( $"[{Id}] {CodeName} - {RealName} ({Location}) | Status: {Status}, Missions: {MissionsCompleted}");
     }
 }

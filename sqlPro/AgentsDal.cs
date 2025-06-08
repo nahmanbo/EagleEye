@@ -172,11 +172,13 @@ namespace sqlPro
         {
             List<Agent> agents = new List<Agent>();
             string query = "SELECT * FROM agent;";
+            MySqlCommand command = new MySqlCommand(query, _connection);
+            MySqlDataReader reader = null;
 
             try
             {
-                using (MySqlCommand command = new MySqlCommand(query, _connection))
-                using (MySqlDataReader reader = command.ExecuteReader())
+                reader = command.ExecuteReader();
+
                 {
                     while (reader.Read())
                     {
@@ -199,7 +201,6 @@ namespace sqlPro
                 Console.WriteLine("Failed to retrieve agents:");
                 Console.WriteLine(ex.Message);
             }
-
             return agents;
         }
     }
